@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+<link href = "static/css/main.css" type="text/css" rel="stylesheet">
+
+{% include 'nav.html' %}
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <h2> 완료된 할 일</h2>
+            <br>
+            <tr>
+                <th>해야 할 일</th>
+                <th>코인</th>
+            </tr>
+        </thead>
+        {% for x in db_t.datas %}    
+        <tr>
+            <td >  {{ x.title }} </td>
+            <td> {{x.tcoin}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <table class="table table-striped">
+        <thead>
+            <h2> 미완료된 할 일</h2>
+            <br>
+            <tr>
+                <th>해야 할 일</th>
+                <th>코인</th>
+                <th>완료</th>
+            </tr>
+        </thead>
+        {% for x in db_f.datas %}     
+        <tr>
+            <td >  {{ x.title }} </td>
+            <td> {{x.tcoin}}</td>
+            <td><a href=/todo_complete?tid={{x.tid}}&tcoin={{x.tcoin}}> 완료</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+

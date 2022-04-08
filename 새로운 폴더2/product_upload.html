@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+<link href = "static/css/main.css" type="text/css" rel="stylesheet">
+
+
+
+{% include 'nav.html' %}
+
+<div class="container">
+    <h2>제품 등록</h2>
+    <form role="form" action=product_upload_process  enctype = "multipart/form-data" method="POST">
+            이미지: <input type="file" name="image"><br> 
+            상품명: <input type="text" class="form-control" name="pname"><br> 
+        <div class="formgroup">
+            코인 : <select class="form-control" name=pcoin> 
+                <option value=1> 1코인</option>
+                <option value=2> 2코인</option>
+                <option value=3> 3코인</option>
+                <option value=4> 4코인</option>
+                <option value=5> 5코인</option>
+            </select>
+        </div>
+        <br> 
+        <button type="submit" class ="btn btn-default">제출</button>
+    </form>
+</div>
