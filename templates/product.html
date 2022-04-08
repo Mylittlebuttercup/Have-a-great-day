@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<link href = "static/css/main.css" type="text/css" rel="stylesheet">
+
+
+
+{% include 'nav.html' %}
+
+
+<br>
+  
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <img src="{{db.image}}" style="width: 300px; height:300px;" class="img-thumbnail">
+            </td>
+        </tr>
+        <br>
+        <tr>
+            <td> <div class='product-name'>
+                {{ db.pname }}</div>
+            </td>
+        </tr>   
+        <br> 
+        <tr>
+            <td> <div class='product-coin'>  {{ db.pcoin }} </div>
+            </td>
+        </tr>      
+        <tr>
+            <td>
+                <a class='btn btn-default' href=/product_buy?pid={{ db.pid }}>구매</a>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,28 @@
+<link href = "static/css/main.css" type="text/css" rel="stylesheet">
+<h1>Hello {{name}}</h1>
+<table border=1>
+    <tr>
+    {% for x in db.datas %}       
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            <img src="{{ url_for('static', filename=x.image)}}" style="width: 100px; height:100px;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            {{ x.name }}                 
+                        </td>
+                    </tr>    
+                    <tr>
+                        <td> <div class='product-price'>
+                    {{ x.price }} </div>> 
+                        </td>
+                    </tr>      
+                </table>
+            </td>        
+    {% endfor %}
+    </tr>
+</table>

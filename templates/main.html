@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+<link href = "static/css/main.css" type="text/css" rel="stylesheet">
+
+    {% include 'nav.html' %}
+<div class="container">
+    <table id="banner">
+        <td>
+            <a href='/' ><img src="{{ url_for('static', filename='main/banner1.png')}}"/></a>
+        </td>
+    </table>
+        <table>
+        <tr>
+            <table>
+                <tr>
+                    {% for x in db.datas %}       
+                    <td>
+                        <table class='product-card'>
+                            <tr>
+                                <td>
+                                    <a href='/product?pid={{x.pid}}'>
+                                        <img src="{{x.image}}" class='product-img'>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class='product-name'>
+                                    {{ x.pname }} </div>                
+                                </td>
+                            </tr>    
+                            <tr>
+                                <td> <div class='product-price'>
+                                    {{ x.pcoin }} </div>
+                                </td>
+                            </tr>      
+                        </table>
+                    </td>        
+                    {% endfor %}
+                </tr>
+            </table>
+        </tr>
+    </table>
+</div>
